@@ -218,7 +218,6 @@ class OAuthController extends Controller
     protected function handleUserAlreadyRegistered($user, $account, $provider, $providerAccount)
     {
         if (Features::hasLoginOnRegistrationFeatures()) {
-
             // The user exists, but they're not registered with the given provider.
             if (! $account) {
                 $this->createsConnectedAccounts->create($user, $provider, $providerAccount);
